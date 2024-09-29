@@ -5,6 +5,7 @@
     <StaticWebAssetBasePath>App_Plugins/UmbracoLoginProvider</StaticWebAssetBasePath>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     <EnableDefaultContentItems>false</EnableDefaultContentItems>
+    <PackageVersion>13.0.0</PackageVersion>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
     <WarningsAsErrors></WarningsAsErrors>
   </PropertyGroup>
@@ -19,8 +20,9 @@
   </ItemGroup>
 
   <Import Project="build\Microsoft.AspNetCore.ClientAssets.targets" />
-  <Target Name="ClientAssetsBuildOutputPath" AfterTargets="ClientAssetsBuild">
-    <WriteLinesToFile File="Gruntfile.outputPath.js" Lines="exports.outputPath = '$(IntermediateOutputPath.Replace('\', '/'))clientassets';" Overwrite="true" />
+  <Target Name="ClientAssetsBuildOutputPath" BeforeTargets="ClientAssetsBuild">
+    <WriteLinesToFile File="config.outputPath.js" Lines="export const outputPath = '$(IntermediateOutputPath.Replace('\', '/'))clientassets';" Overwrite="true" />
+    <WriteLinesToFile File="config.outputPath.js" Lines="export const outputVersion = '$(PackageVersion)'" />
   </Target>
 
   <!-- Run NPM test after build -->

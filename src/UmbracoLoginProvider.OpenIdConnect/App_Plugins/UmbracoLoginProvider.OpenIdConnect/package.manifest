@@ -1,5 +1,0 @@
-{
-    "id": "UmbracoLoginProvider.OpenIdConnect",
-    "name": "UmbracoLoginProvider.OpenIdConnect",
-    "allowPackageTelemetry": true
-}
