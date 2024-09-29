@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DA062556-A822-4A73-A123-264840433A85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmbracoLoginProvider", "src\UmbracoLoginProvider.Web\UmbracoLoginProvider.csproj", "{EEBDF139-10B0-4BA5-A99E-85FD413CC11B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmbracoLoginProvider", "src\UmbracoLoginProvider.Web\UmbracoLoginProvider.Web.csproj", "{EEBDF139-10B0-4BA5-A99E-85FD413CC11B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmbracoLoginProvider.OpenIdConnect", "src\UmbracoLoginProvider.OpenIdConnect\UmbracoLoginProvider.OpenIdConnect.csproj", "{EEE1B3E7-5C7E-4F4C-93A6-4546528EA9EE}"
 EndProject
