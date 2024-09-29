@@ -23,4 +23,8 @@
     <Content Include="App_Plugins\UmbracoLoginProvider.OpenIdConnect\**" ExcludeFromSingleFile="true" CopyToPublishDirectory="Always" />
     <None Include="buildTransitive\**" Pack="true" PackagePath="buildTransitive" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\UmbracoLoginProvider.StaticAssets\UmbracoLoginProvider.StaticAssets.csproj" />
+  </ItemGroup>
 </Project>

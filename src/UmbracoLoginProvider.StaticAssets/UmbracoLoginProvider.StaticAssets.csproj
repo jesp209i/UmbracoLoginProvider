@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+  <PropertyGroup>
+    <Title>Umbraco Login Provider - Static Assets</Title>
+    <TargetFramework>net8.0</TargetFramework>
+    <StaticWebAssetBasePath>App_Plugins/UmbracoLoginProvider</StaticWebAssetBasePath>
+    <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+    <EnableDefaultContentItems>false</EnableDefaultContentItems>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
+    <WarningsAsErrors></WarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="build\readme.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <Import Project="build\Microsoft.AspNetCore.ClientAssets.targets" />
+  <Target Name="ClientAssetsBuildOutputPath" AfterTargets="ClientAssetsBuild">
+    <WriteLinesToFile File="Gruntfile.outputPath.js" Lines="exports.outputPath = '$(IntermediateOutputPath.Replace('\', '/'))clientassets';" Overwrite="true" />
+  </Target>
+
+  <!-- Run NPM test after build -->
+  <Target Name="ClientAssetsTest" DependsOnTargets="ClientAssetsBuild" AfterTargets="Build" Condition="'$(ContinuousIntegrationBuild)' != '' and $(ContinuousIntegrationBuild)">
+    <Message Text="Executing NPM test script" Importance="high" />
+    <Exec Command="npm test" />
+  </Target>
+
+</Project>

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmbracoLoginProvider", "src
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmbracoLoginProvider.OpenIdConnect", "src\UmbracoLoginProvider.OpenIdConnect\UmbracoLoginProvider.OpenIdConnect.csproj", "{EEE1B3E7-5C7E-4F4C-93A6-4546528EA9EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmbracoLoginProvider.StaticAssets", "src\UmbracoLoginProvider.StaticAssets\UmbracoLoginProvider.StaticAssets.csproj", "{2ECC745B-3746-4B4F-9EF3-0650A77EBCEF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,9 +28,14 @@ Global
 		{EEE1B3E7-5C7E-4F4C-93A6-4546528EA9EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEE1B3E7-5C7E-4F4C-93A6-4546528EA9EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEE1B3E7-5C7E-4F4C-93A6-4546528EA9EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2ECC745B-3746-4B4F-9EF3-0650A77EBCEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2ECC745B-3746-4B4F-9EF3-0650A77EBCEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2ECC745B-3746-4B4F-9EF3-0650A77EBCEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2ECC745B-3746-4B4F-9EF3-0650A77EBCEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{EEBDF139-10B0-4BA5-A99E-85FD413CC11B} = {DA062556-A822-4A73-A123-264840433A85}
 		{EEE1B3E7-5C7E-4F4C-93A6-4546528EA9EE} = {DA062556-A822-4A73-A123-264840433A85}
+		{2ECC745B-3746-4B4F-9EF3-0650A77EBCEF} = {DA062556-A822-4A73-A123-264840433A85}
 	EndGlobalSection
 EndGlobal
