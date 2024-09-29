@@ -1,0 +1,17 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <UmbracoVersion>13.5.1</UmbracoVersion>
+  </PropertyGroup>
+  <!-- Umbraco Packages -->
+  <ItemGroup>
+    <PackageVersion Include="Umbraco.Cms" Version="$(UmbracoVersion)" />
+    <PackageVersion Include="Umbraco.Cms.Web.Website" Version="$(UmbracoVersion)" />
+    <PackageVersion Include="Umbraco.Cms.Web.BackOffice" Version="$(UmbracoVersion)" />
+  </ItemGroup>
+  
+  <!-- 3rd Party Packages-->
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.ICU.ICU4C.Runtime" Version="72.1.0.3" />
+  </ItemGroup>
+</Project>  
