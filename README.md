@@ -1,5 +1,7 @@
 # Umbraco External Login Provider
-This is just to play around with the Umbraco External Login Provider functionality
+This is just to play around with the Umbraco External Login Provider functionality.
+
+Currently only supports OpenID Connect.
 
 ## Microsoft Entra ID
 Create a new App registration in Microsoft Azure Entra ID.
