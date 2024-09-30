@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.Extensions.Options;
+using UmbracoLoginProvider.OpenIdConnect.Configuration;
 
-namespace UmbracoLoginProvider.OpenIdConnect.Configuration;
+namespace UmbracoLoginProvider.OpenIdConnect.Options;
 
 public class ConfigureOpenIdConnectOptions : IPostConfigureOptions<OpenIdConnectOptions>
 {
@@ -13,7 +14,7 @@ public class ConfigureOpenIdConnectOptions : IPostConfigureOptions<OpenIdConnect
     }
     public void PostConfigure(string? name, OpenIdConnectOptions options)
     {
-        if (name != "Hest")
+        if (name != "Umbraco." + _externalLoginProviderConfiguration.LoginProviderAlias)
         {
             return;
         }

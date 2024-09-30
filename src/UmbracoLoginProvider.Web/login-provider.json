@@ -1,0 +1,11 @@
+{
+  "External": {
+    "CallBackPath" : "/signin-oidc",
+    "TenantId" : "",
+    "ClientId": "",
+    "ClientSecret" : "",
+    "AuthorityBase" : "https://login.microsoftonline.com",
+    "LoginProviderAlias" : "ExternalLoginProvider",
+    "LoginProviderPrettyName" : "External Login Provider"
+  }
+}

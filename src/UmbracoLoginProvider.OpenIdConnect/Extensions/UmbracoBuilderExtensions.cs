@@ -1,7 +1,9 @@
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Extensions;
+using UmbracoLoginProvider.OpenIdConnect.Configuration;
 using UmbracoLoginProvider.OpenIdConnect.Options;
 
 namespace UmbracoLoginProvider.OpenIdConnect.Extensions;
@@ -11,12 +13,16 @@ public static class UmbracoBuilderExtensions
     public static IUmbracoBuilder AddExternalLoginProviders(this IUmbracoBuilder builder)
     {
         builder.Services.ConfigureOptions<ExternalLoginProviderOptions>();
-        builder.Services.AddAuthentication();
+        builder.Services.ConfigureOptions<ConfigureOpenIdConnectOptions>();
+
+        var serviceProvider = builder.Services.BuildServiceProvider();
+        var externalLoginOptions = serviceProvider.GetService<IOptions<ExternalLoginProviderConfiguration>>();
+        var optionsSchemeName = externalLoginOptions.Value.LoginProviderAlias;
+        
         builder.AddBackOfficeExternalLogins(logins =>
         {
             logins.AddBackOfficeLogin(backOfficeAuthenticationBuilder =>
             {
-                var optionsSchemeName = ExternalLoginProviderOptions.SchemeName;
                 var schemeName =
                     backOfficeAuthenticationBuilder.SchemeForBackOffice($"{Constants.Security.BackOfficeExternalAuthenticationTypePrefix}{optionsSchemeName}");
 

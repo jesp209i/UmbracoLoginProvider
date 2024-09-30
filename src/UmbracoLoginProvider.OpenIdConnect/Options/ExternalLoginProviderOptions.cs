@@ -1,12 +1,18 @@
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Web.BackOffice.Security;
+using UmbracoLoginProvider.OpenIdConnect.Configuration;
 
 namespace UmbracoLoginProvider.OpenIdConnect.Options;
 
 public class ExternalLoginProviderOptions : IConfigureNamedOptions<BackOfficeExternalLoginProviderOptions>
 {
-    public const string SchemeName = "Bubber";
+    public string SchemeName { get; set; } = "ExternalLoginProvider";
+
+    public ExternalLoginProviderOptions(IOptions<ExternalLoginProviderConfiguration> externalLoginProviderConfiguration)
+    {
+        SchemeName = externalLoginProviderConfiguration.Value.LoginProviderAlias;
+    }
     public void Configure(string? name, BackOfficeExternalLoginProviderOptions options)
     {
         if (name != Constants.Security.BackOfficeExternalAuthenticationTypePrefix + SchemeName)
